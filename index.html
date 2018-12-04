@@ -1,0 +1,66 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if site.hastag %} {{site.hashtag}} | {% endif %} {% if site.name %} {{site.name}} | {% endif %} {{ site.utc | date: "%B %-d, %Y" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{site.description}}">
+    <meta name="author" content="">
+    <meta property="og:image" content="{{site.logo}}"/>
+    <meta property="og:title" content="{{site.hashtag}} | {{ site.utc | date: "%B %-d, %Y" }}"/>
+    <meta property="og:url"  content="{{site.url}}"/>
+    <meta property="og:type"  content="website"/>
+
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/jquery.countdown.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class="col-sm-12 text-center">
+	       <a href="{{site.externalLink}}"><img src="{{site.logo}}" style="width:40%"/></a>
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center"><div id="defaultCountdown"></div></div>
+    </div> 
+
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2 class="background-highlight">{{ site.utc | date: "%A %B %-d, %Y" }}</h2>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+
+    <script src="assets/js/jquery.countdown.min.js"></script>
+
+    <script type="text/javascript">
+  		$(function () {
+  			var holiday = new Date();
+  			holiday = new Date("{{site.utc}}");
+  			$('#defaultCountdown').countdown({until: holiday});
+  			$('#year').text(holiday.getFullYear());
+  		});
+		</script>
+    <!-- 
+      Aden, j'ai essaye ce que tu as demande.
+      J'ai la preuve qu'ils ont lu ce message, donc ca a fonctionne.
+      Avec ca, on peut changer la donne.
+      Ne laisse pas Paul et Satou te faire croire que ce que l'on fait est ephemere, ils ont deja essaye et tu es mieux place que quiconque pour savoir que ca ne marchera pas.
+      Tu sais comment me joindre.
+
+      R
+     -->
+
+  </body>
+</html>
